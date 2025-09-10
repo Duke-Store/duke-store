@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Duke Store</title>
+  <meta name="description" content="A single-file, responsive portfolio website to showcase your designs." />
+  <link rel = "stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <span>Duke</span>
+      </div>
+
+      <input type="checkbox" id="menu-toggle" />
+
+      <nav class="menu" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#contact">Hire Me</a>
+      </nav>
+    </div>
+  </header>
+   <!-- Back To Top Btn -->
+    <button id="backToTop" title="Back to top"><h0 class="arrow-up">↑</h0></button>
+    <!-- End Of Btn-->
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container wrap">
+      <div>
+        <span class="tag">Designer / Creative</span>
+        <h1>I Am Duke.</h1>
+        <p>I Build This Webstie To ShowCase All My Designs In One Place</p>
+        <a class="btn" href="#work">See My Work</a>
+      </div>
+
+      <div class="card">
+        <div class="profile-card">
+          <img src="/Img/profile-card.png" alt="my-pfp">
+        </div>
+        <div class="grid" style="--col: 2">
+          <!-- Inline placeholder thumbnails (replace SVGs with your real images if you like) -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Work / Portfolio -->
+  <section id="work" class="section">
+    <div class="container">
+      <h2>Selected Work</h2>
+      <p class="lead">A Design For ShowCase My Designs</p>
+
+      <div class="grid">
+        <!-- Card 1 -->
+        <article class="tile">
+          <img class="Anime" src="/Img/eren Banner blue.png">
+          <div class="meta">
+            <h4>Anime Designs</h4>
+            <p>Anime Design For (X - Youtube - Discord).</p>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="tile">
+          <img class="Discord" src="/img/test.png" >
+          <div class="meta">
+            <h4>Discord Design</h4>
+            <p>Discord Designs For (Shop - Store - Community) Servers.</p>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="tile">
+          <img class="post" src="/Img/POST.png">
+          <div class="meta">
+            <h4>Poster Design</h4>
+            <p>Clean Design For A Custmer.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section" aria-labelledby="about-title">
+    <div class="container-about">
+      <div>
+        <h2 id="about-title">About Me</h2>
+        <p class="lead">I Am A Designer Who Work On A Different Fields .</p>
+        <ul>
+          <li><strong>Designs:</strong> Banner ,Poster ,Pfp ,Other Design</li>
+          <li><strong>Tools:</strong>Adobe Photoshop ,Adobe Illustrator ,Adobe After Effects</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h3 style="margin-top:0">Quick Stats</h3>
+        <p><strong>70+ projects</strong> Design For Youtubers And Instgram Stars.</p>
+        <p><strong>3 years</strong> designing delightful products.</p>
+        <p>Available for <strong>freelance</strong> and <strong>full‑time</strong> work.</p>
+        <a class="btn" href="#contact">Let’s work together</a>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Contact -->
+<section id="contact" class="section">
+  <h2 id="contact-title" class="contact-title">Contact</h2>
+ <div class="form-wrapper">
+    <div class="form-container">
+      <div class="form-container">
+          <form action="https://api.web3forms.com/submit" method="POST">
+              <!-- Your Web3Forms Access Key -->
+              <input type="hidden" name="access_key" value="3a3b3a5b-030b-4b74-844c-2955f2f0aecc" />
+              
+              <div class="form-row">
+                  <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" id="name" name="name" placeholder="Your name">
+                  </div>
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" placeholder="you@example.com">
+                  </div>
+              </div>
+              
+              <div class="form-group full-width">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Tell me about your project..."></textarea>
+              </div>
+              
+              <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Contact End -->
+  <!-- Footer -->
+  <footer>
+    <div class="container row">
+      <small>© <span id="y"></span> Duke Store .</small>
+      
+    </div>
+  </footer>
+
+  <script>
+    // Tiny JS to set current year (kept inline, no external files)
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // End
+    //Back To Top Start
+    const backToTop = document.getElementById("backToTop");
+
+    window.onscroll = () => {
+      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        backToTop.style.display = "flex"; // show button
+      } else {
+        backToTop.style.display = "none"; // hide button
+      }
+    };
+
+    backToTop.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+    // End
+    // contact script start
+// JavaScript for form validation
+document.querySelector('.form-container form').addEventListener('submit', function(e) {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    if (!name || !email || !message) {
+        e.preventDefault();
+        alert('Please fill in all fields.');
+        return false;
+    }
+    
+    // Form will submit normally to Web3Forms if validation passes
+});
+    // contact script end
+    // Card Effect Start
+        // Modal functionality
+    const tiles = document.querySelectorAll('.tile[data-modal]');
+    const modals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.close[data-modal]');
+
+    // Open modal when tile is clicked
+    tiles.forEach(tile => {
+      tile.addEventListener('click', function() {
+        const modalId = this.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          document.body.style.overflow = 'hidden'; // Prevent background scrolling
+          modal.style.display = 'flex';
+          setTimeout(() => {
+            modal.classList.add('show');
+          }, 10);
+        }
+      });
+    });
+
+    // Close modal when close button is clicked
+    closeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const modalId = this.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          modal.classList.remove('show');
+          setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+          }, 300);
+        }
+      });
+    });
+
+    // Close modal when clicking outside the modal content
+    modals.forEach(modal => {
+      modal.addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.classList.remove('show');
+          setTimeout(() => {
+            this.style.display = 'none';
+            document.body.style.overflow = 'auto';
+          }, 300);
+        }
+      });
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const openModal = document.querySelector('.modal.show');
+        if (openModal) {
+          openModal.classList.remove('show');
+          setTimeout(() => {
+            openModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+          }, 300);
+        }
+      }
+    });
+
+    // Form validation
+    document.querySelector('.form-container form').addEventListener('submit', function(e) {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      if (!name || !email || !message) {
+        e.preventDefault();
+        alert('Please fill in all fields.');
+        return false;
+      }
+    });
+
+    // Gallery item click effect (optional - for individual image viewing)
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', function() {
+        const title = this.querySelector('h5').textContent;
+        const description = this.querySelector('p').textContent;
+        
+        // Simple alert for demo - you can replace this with a larger image viewer
+        alert(`${title}\n\n${description}\n\nClick OK to continue browsing the gallery.`);
+      });
+    });
+    // Card Effect End
+  </script>
+</body>
+</html>
