@@ -232,7 +232,7 @@
     color: #ffffff;
 }
 .form-wrapper {
-    margin: 50px auto; /* Adjust the 50px to whatever margin you want */
+    margin: 50px 600px 20px auto; /* Moves the container to the right */
     max-width: 600px;
 }
 #about-title {
