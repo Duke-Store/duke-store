@@ -6,8 +6,6 @@ and Git. I've built several systems and developed many Discord projects, generat
 My Team Website: https://vyre-dev.web.app/
 If You Want To contact me this is my accounts:
 
-Instagram : duke.3mk
-
 Discord : d0k3.
 
 Gmail : dukedevwork@gmail.com
